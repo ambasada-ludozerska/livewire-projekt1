@@ -13,12 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', App\Http\Livewire\FullPages\CategoryList::class);
 
-Route::get('/przedmioty', App\Http\Livewire\ItemList::class);
-Route::get('/przedmioty/dodaj-przedmiot', App\Http\Livewire\ItemAdd::class);
-Route::get('/przedmioty/{id}', App\Http\Livewire\ItemShow::class);
-Route::get('/przedmioty/{id}/edytuj', App\Http\Livewire\ItemEdit::class);
-Route::get('/przedmioty/{id}/usun', App\Http\Livewire\ItemDelete::class);
+Route::get('/add', App\Http\Livewire\FullPages\Forms\CategoryAdd::class);
+Route::get('/{id}/edit', App\Http\Livewire\FullPages\Forms\CategoryEdit::class);
+Route::get('/{id}/delete', App\Http\Livewire\FullPages\Forms\CategoryDelete::class);
